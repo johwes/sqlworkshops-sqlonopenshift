@@ -1,8 +1,11 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mssql-deployment
 spec:
+  selector:
+    matchLabels:
+      app: mssql
   replicas: 1
   strategy:
     type: Recreate
